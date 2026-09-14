@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leon | Template One</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--main-color:#10cab7;--secondary-color:#2c4755;--section-padding:60px;--section-background:#f6f6f6;--main-duration:.5s}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Work Sans",sans-serif}
+.container{padding-left:15px;padding-right:15px;margin-left:auto;margin-right:auto}
+@media(min-width:768px){.container{width:750px}}@media(min-width:992px){.container{width:970px}}@media(min-width:1200px){.container{width:1170px}}
+.special-heading{color:#ebeced;font-size:100px;text-align:center;font-weight:800;letter-spacing:-3px;margin:0}
+.special-heading+p{margin:-30px 0 0;font-size:20px;text-align:center;color:#797979}
+@media(max-width:767px){.special-heading{font-size:60px}.special-heading+p{margin-top:-20px}}
+.header{padding:20px}.header .container{display:flex;justify-content:space-between;align-items:center}
+.header .logo{width:60px}.header .links{position:relative}.header .links:hover .icon span:nth-child(2){width:100%}
+.header .links .icon{width:30px;display:flex;flex-wrap:wrap;justify-content:flex-end}.header .links .icon span{background:#333;margin-bottom:5px;height:2px}
+.header .links .icon span:first-child,.header .links .icon span:last-child{width:100%}.header .links .icon span:nth-child(2){width:60%;transition:var(--main-duration)}
+.header .links ul{list-style:none;margin:0;padding:0;background:#f6f6f6;position:absolute;right:0;min-width:200px;top:calc(100% + 15px);display:none;z-index:10}
+.header .links ul:before{content:"";border:10px solid transparent;border-bottom-color:#f6f6f6;position:absolute;right:5px;top:-20px}
+.header .links:hover ul{display:block}.header .links ul li a{display:block;padding:15px;text-decoration:none;color:#333;transition:var(--main-duration)}
+.header .links ul li a:hover{padding-left:25px}.header .links ul li:not(:last-child) a{border-bottom:1px solid #ddd}
+.landing{background-image:url("https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/landing.jpg");background-size:cover;height:calc(100vh - 64px);position:relative}
+.landing .intro-text{position:absolute;left:50%;top:50%;text-align:center;transform:translate(-50%,-50%);width:320px;max-width:100%}
+.landing .intro-text h1{margin:0;font-weight:bold;font-size:50px;color:var(--main-color)}.landing .intro-text p{font-size:19px;line-height:1.8}
+.features{padding:var(--section-padding) 0;background:#f6f6f6}.features .container{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.features .feat{padding:20px;text-align:center}.features .feat i{color:var(--main-color)}.features .feat h3{font-weight:800;margin:30px 0}.features .feat p{line-height:1.8;color:#777;font-size:17px}
+.services{padding:var(--section-padding) 0}.services .services-content{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;margin-top:100px}
+.services .srv{display:flex;margin-bottom:40px}.services .srv i{color:var(--main-color);flex-basis:60px}.services .srv .text{flex:1}.services .srv .text h3{margin:0 0 20px}.services .srv .text p{color:#444;font-weight:300;line-height:1.6}
+.services .image{text-align:center;position:relative}.services .image:before{content:"";background:var(--secondary-color);width:100px;height:calc(100% + 100px);top:-50px;position:absolute;right:0;z-index:-1}.services .image img{width:260px}
+@media(max-width:1199px){.image-column{display:none}}@media(max-width:767px){.services .srv{flex-direction:column;text-align:center}}
+.portfolio{padding:var(--section-padding) 0;background:#f6f6f6}.portfolio .portfolio-content{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;margin-top:80px}
+.portfolio .card{background:#fff}.portfolio .card img{max-width:100%;display:block}.portfolio .card .info{padding:20px}.portfolio .card .info h3{margin:0}.portfolio .card .info p{color:#777;line-height:1.6;margin-bottom:0}
+.about{padding:var(--section-padding) 0 calc(var(--section-padding) + 60px)}.about .about-content{margin-top:100px;display:flex;flex-wrap:wrap;justify-content:space-between}
+.about .image{position:relative;width:250px;height:375px}.about .image:before{content:"";position:absolute;background:#ebeced;width:100px;height:calc(100% + 80px);top:-40px;left:-20px;z-index:-1}
+.about .image:after{top:-40px;content:"";position:absolute;width:120px;height:300px;border-left:80px solid var(--main-color);border-bottom:80px solid var(--main-color);z-index:-1;right:-150px}
+.about .image img{max-width:100%}.about .text{flex-basis:calc(100% - 500px)}.about .text p:first-of-type{font-weight:bold;line-height:2;margin-bottom:50px}
+.about .text hr{width:50%;display:inline-block;border-color:var(--main-color)}.about .text p:last-of-type{line-height:2;color:#777}
+@media(max-width:991px){.about .about-content{flex-direction:column;text-align:center}.about .image{margin:0 auto 60px}.about .image:before,.about .image:after{display:none}.about .text{flex-basis:auto}}
+.contact{padding:var(--section-padding) 0;background:#f6f6f6}.contact .info{padding:var(--section-padding) 0;text-align:center}
+.contact .label{font-size:35px;font-weight:800;color:var(--secondary-color);letter-spacing:-2px;margin-bottom:15px}.contact .link{display:block;font-size:35px;font-weight:800;color:var(--main-color);text-decoration:none}
+.contact .social{display:flex;justify-content:center;margin-top:20px;font-size:16px}.contact .social i{margin-left:10px;color:var(--secondary-color)}
+@media(max-width:767px){.contact .label,.contact .link{font-size:25px}}
+.footer{background:var(--secondary-color);color:#fff;padding:30px 10px;text-align:center;font-size:18px}.footer span{font-weight:bold;color:var(--main-color)}
+</style>
+</head>
+<body>
+<div class="header"><div class="container">
+<img class="logo" src="https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/logo.png" alt="Leon">
+<div class="links"><span class="icon"><span></span><span></span><span></span></span>
+<ul><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+</div></div>
+
+<div class="landing"><div class="intro-text"><h1>Hello There</h1><p>We are Leon - Super Creative &amp; Minimal Agency Web Template</p></div></div>
+
+<div class="features"><div class="container">
+<div class="feat"><i class="fa-solid fa-wand-magic-sparkles fa-3x"></i><h3>Tell Us Your Idea</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab</p></div>
+<div class="feat"><i class="fa-regular fa-gem fa-3x"></i><h3>We Will Do All The Work</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab</p></div>
+<div class="feat"><i class="fa-solid fa-globe-asia fa-3x"></i><h3>Your Product is Worldwide</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab</p></div>
+</div></div>
+
+<div class="services" id="services"><div class="container"><h2 class="special-heading">Services</h2><p>Don't be busy, be productive</p>
+<div class="services-content"><div class="col">
+<div class="srv"><i class="fa-solid fa-palette fa-2x"></i><div class="text"><h3>Graphic Design</h3><p>Graphic design is the process of visual communication and problem-solving using one or more of typography, photography and illustration.</p></div></div>
+<div class="srv"><i class="fa-brands fa-sketch fa-2x"></i><div class="text"><h3>UI &amp; UX</h3><p>Process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction.</p></div></div>
+</div><div class="col">
+<div class="srv"><i class="fa-solid fa-vector-square fa-2x"></i><div class="text"><h3>Web Design</h3><p>Web design encompasses many different skills and disciplines in the production and maintenance of websites.</p></div></div>
+<div class="srv"><i class="fa-solid fa-pencil-ruler fa-2x"></i><div class="text"><h3>Web Development</h3><p>Web development is a broad term for the work involved in developing a web site for the Internet or an intranet.</p></div></div>
+</div><div class="col"><div class="image image-column"><img src="https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/services.jpg" alt=""></div></div>
+</div></div></div>
+
+<div class="portfolio" id="portfolio"><div class="container"><h2 class="special-heading">Portfolio</h2><p>If you do it right, it will last forever.</p>
+<div class="portfolio-content">
+<div class="card"><img src="https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/portfolio-1.jpg" alt=""><div class="info"><h3>Project Here</h3><p>My creative ability is very difficult to measure because it can manifest in so many surprising and.</p></div></div>
+<div class="card"><img src="https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/portfolio-2.jpg" alt=""><div class="info"><h3>Project Here</h3><p>My creative ability is very difficult to measure because it can manifest in so many surprising and.</p></div></div>
+<div class="card"><img src="https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/portfolio-3.jpg" alt=""><div class="info"><h3>Project Here</h3><p>My creative ability is very difficult to measure because it can manifest in so many surprising and.</p></div></div>
+</div></div></div>
+
+<div class="about" id="about"><div class="container"><h2 class="special-heading">About</h2><p>Less is more work</p>
+<div class="about-content"><div class="image"><img src="https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_One/master/images/about.jpg" alt=""></div>
+<div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nemo neque voluptate tempora velit cum non, fuga vitae architecto delectus sed maxime rerum impedit aliquam obcaecati, aut excepturi iusto laudantium!</p><hr><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sapiente. Velit iure exercitationem dolores nesciunt dolore. Eum officiis dolorum hic voluptate quaerat minima, similique inventore esse, alias, sed quo officia?</p></div></div>
+</div></div>
+
+<div class="contact" id="contact"><div class="container"><h2 class="special-heading">Contact</h2><p>We are born to create</p>
+<div class="info"><p class="label">Feel free to drop us a line at:</p><a href="mailto:leonagency@mail.com?subject=Contact" class="link">leonagency@mail.com</a>
+<div class="social">Find Us On Social Networks <i class="fa-brands fa-youtube"></i><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i></div></div></div></div>
+
+<div class="footer">&copy; 2021 <span>Leon</span> All Right Reserved</div>
+</body>
+</html>
